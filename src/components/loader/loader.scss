@@ -1,0 +1,24 @@
+.loading_div{
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+ background: rgba(0,0,0,0.6);
+  //backdrop-filter: blur(8px);
+  z-index: 999;
+  visibility: hidden;
+}
+
+.loading_div.loading_div_display{
+  opacity:1;
+  visibility: visible;
+}
+.loading_img{
+  max-width: 100%;
+}

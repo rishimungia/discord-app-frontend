@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Hairline&display=swap');
+
+:root {
+  * {
+    font-family: 'Bungee Hairline', sans-serif;
+    color: #FFF;
+    letter-spacing: -2px;
+  }
+
+  background: #000;
+}
+
+.main {
+  position: relative;
+}
+
+.neon {
+  --inner-border: #FFF;
+  --bright-border: #e6e6e6;
+  --dull-border: #757575;
+
+  position: absolute;
+  inset: 50% 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: min(35rem, 80vw);
+  aspect-ratio: 1;
+
+  border: 10px solid var(--inner-border);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px var(--bright-border),
+    0 0 20px var(--bright-border),
+    0 0 40px var(--dull-border),
+    0 0 70px var(--dull-border),
+    0 0 80px var(--dull-border),
+    inset 0 0 10px var(--bright-border),
+    inset 0 0 20px var(--bright-border),
+    inset 0 0 40px var(--dull-border),
+    inset 0 0 70px var(--dull-border),
+    inset 0 0 80px var(--dull-border);
+
+  z-index: -1;
+
+  transition: all 1s ease-in-out;
+
+  * {
+    transition: all 1s ease-in-out;
+  }
+
+  .line1,
+  .line2 {
+    position: absolute;
+    inset: -12px 50%;
+
+    height: calc(100% + 20px);
+    width: 0px;
+    background-color: var(--inner-border);
+
+    border-left: 10px solid var(--inner-border);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px var(--bright-border),
+      0 0 20px var(--bright-border),
+      0 0 40px var(--dull-border),
+      0 0 70px var(--dull-border),
+      0 0 80px var(--dull-border),
+      inset 0 0 10px var(--bright-border),
+      inset 0 0 20px var(--bright-border),
+      inset 0 0 40px var(--dull-border),
+      inset 0 0 70px var(--dull-border),
+      inset 0 0 80px var(--dull-border);
+
+
+    transform: translateX(max(-18rem, -42vw));
+    opacity: 0;
+  }
+
+  .line2 {
+    transform: translateX(min(17.5rem, 40vw));
+  }
+}
+
+#invalid {
+  --inner-border: #ffdfbd;
+  --bright-border: #ffdfbd;
+  --dull-border: #ff8244;
+
+  border: none;
+  box-shadow: none;
+
+  transform: translate(-50%, -50%) rotate(180deg);
+
+  .line1 {
+    transform: rotate(45deg) translateX(-50%);
+    opacity: 1;
+  }
+
+  .line2 {
+    transform: rotate(-45deg) translateX(-50%);
+    opacity: 1;
+  }
+}
+
+#connected {
+  --inner-border: #ffccd5;
+  --bright-border: #ffccd5;
+  --dull-border: #6e1dcf;
+}
+
+#loading {
+  --inner-border: #b0fefe;
+  --bright-border: #b0fefe;
+  --dull-border: #3db9bb;
+
+  transition: all 3s ease-in-out;
+  transform: translate(-50%, -50%) rotate(720deg);
+  border-radius: 50rem;
+}

@@ -1,0 +1,75 @@
+.main_div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh);
+
+  padding: 0rem 5vw;
+
+  position: relative;
+  isolation: isolate;
+
+  .middle_panel_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2rem;
+
+    width: min(36rem, 90vw);
+    aspect-ratio: 21 / 9;
+
+    background: hsla(0, 0%, 100%, 0.25);
+    backdrop-filter: blur(20px) saturate(2);
+
+    isolation: isolate;
+
+    --clip: 2.5rem;
+    clip-path: polygon(var(--clip) 0, 100% 0, 100% calc(100% - var(--clip)), calc(100% - var(--clip)) 100%, 0 100%, 0 var(--clip));
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 2px 2px;
+
+      width: calc(100% - 4px);
+      height: calc(100% - 4px);
+
+      background: hsla(0, 0%, 0%, 0.35);
+
+      --clip: 2.475rem;
+      clip-path: polygon(var(--clip) 0, 100% 0, 100% calc(100% - var(--clip)), calc(100% - var(--clip)) 100%, 0 100%, 0 var(--clip));
+
+      z-index: -1;
+    }
+
+    p {
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: normal;
+    }
+
+    button {
+      margin-top: 1rem;
+      cursor: pointer;
+      padding: 0rem 2rem;
+      background-color: hsla(0, 0%, 100%, 0.15);
+
+      font-size: 1.25rem;
+      font-weight: 600;
+
+      border: 2px solid hsla(0, 0%, 100%, 0.5);
+      outline: none;
+
+      transition: all 0.2s ease-in-out;
+    }
+
+    button:hover {
+      border: 2px solid hsl(0, 0%, 100%);
+      background-color: hsla(0, 0%, 100%, 0.25);
+    }
+
+  }
+}
